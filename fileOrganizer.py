@@ -14,7 +14,7 @@ window.geometry(str(win_width) + 'x' + str(win_height))
 window.resizable(False, False)
 window.title("File Organizer")
 
-directory_name = Entry(window, width=62)
+directory_name = Entry(window, width=59)
 directory_name.grid(column=0, row=1, sticky=W, padx=10, pady=10)
 
 file_type_notebook = Notebook(window)
