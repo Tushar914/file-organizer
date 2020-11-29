@@ -8,7 +8,7 @@
 #include <vector>
 #include <filesystem>
 
-namespace fs = std::experimental::filesystem;
+namespace fs = std::filesystem;
 
 class FileOrganizerClass
 {
@@ -59,7 +59,7 @@ public:
 
 		for (fs::directory_entry fileName : files)
 		{
-			if (!fs::is_directory(fileName) && fileName != thisFile)
+			if (!fs::is_directory(fileName) && fileName.operator!=(fs::directory_entry(thisFile)))
 			{
 				fileExt = fileName.path().extension().string();
 				std::transform(fileExt.begin(), fileExt.end(), fileExt.begin(), ::tolower);
